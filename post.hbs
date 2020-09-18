@@ -1,0 +1,23 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+<div id="post" class="container">
+    {{#post}}
+    <main>
+        <h2>{{title}}</h2>
+        {{#if feature_image}}
+        <img src={{img_url feature_image}} alt={{title}}>
+        {{/if}}
+        {{content}}
+    </main>
+    {{#if primary_tag}}
+    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}
+    {{#foreach related_posts}}
+    {{> "post-card"}}
+    {{/foreach}}
+    {{/get}}
+    {{/if}}
+    {{/post}}
+</div>

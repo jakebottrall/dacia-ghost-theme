@@ -1,0 +1,13 @@
+{{#if isSecondary}}
+<div id="social">
+        {{#foreach navigation}}
+        <a href="{{url}}" target=" _blank" rel="noopener"><i class="{{label}} fa-2x social-icon"></i></a>
+        {{/foreach}}
+</div>
+{{else}}
+<nav id="navigation">
+        {{#foreach navigation}}
+        <a href="{{url}}" class="{{#if current}}active{{/if}}">{{label}}</a>
+        {{/foreach}}
+</nav>
+{{/if}}

@@ -1,0 +1,282 @@
+/* Table of Contents
+/* ------------------------------------------------------------
+
+1.  Global Styles
+2.  Milligram Overide Styles
+3.  Header/Navigation Styles
+4.  Footer Styles
+5.  Index Styles
+6.  Tag Styles
+7.  Author Styles
+8.  Page Styles
+9.  Post Styles
+10. Post-card Styles
+11. Error Styles
+12. Snackbar Styles
+
+*/
+
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+:root {
+  --primary: #ed4795;
+  --primary-light: #ff7dc5;
+  --primary-dark: #b60067;
+  --secondary: #37acb8;
+  --secondary-light: #71deea;
+  --secondary-dark: #007c88;
+  --light-contrast-text: #000;
+  --light-contrast-subtext: rgba(0, 0, 0, 0.54);
+  --dark-contrast-text: #fff;
+  --dark-contrast-subtext: rgba(255, 255, 255, 0.54);
+  --error: #f44336;
+  --warning: #ff9800;
+  --info: #2196f3;
+  --success: #4caf50;
+  --background-default: #000;
+  --background-paper: #424242;
+}
+
+html {
+  background-color: var(--background-default);
+}
+
+body {
+  opacity: 0;
+  color: var(--dark-contrast-text);
+  transition: opacity 0.5s ease-in-out;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--background-default);
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+code {
+  background-color: var(--background-paper);
+}
+
+a {
+  color: var(--primary);
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+/* 2. Milligram Overide Styles
+/* ---------------------------------------------------------- */
+
+/* button overides and enhancements */
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--dark-contrast-text);
+}
+
+.button.button-outline,
+button.button-outline,
+input[type="button"].button-outline,
+input[type="reset"].button-outline,
+input[type="submit"].button-outline {
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.button.button-clear,
+button.button-clear,
+input[type="button"].button-clear,
+input[type="reset"].button-clear,
+input[type="submit"].button-clear {
+  color: var(--primary);
+}
+
+.button-secondary,
+input[type="button"].button-secondary,
+input[type="reset"].button-secondary,
+input[type="submit"].button-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--dark-contrast-text);
+}
+
+.button.button-outline.button-secondary,
+button.button-outline.button-secondary,
+input[type="button"].button-outline.button-secondary,
+input[type="reset"].button-outline.button-secondary,
+input[type="submit"].button-outline.button-secondary {
+  color: var(--secondary);
+}
+
+.button.button-clear.button-secondary,
+button.button-clear.button-secondary,
+input[type="button"].button-clear.button-secondary,
+input[type="reset"].button-clear.button-secondary,
+input[type="submit"].button-clear.button-secondary {
+  color: var(--secondary);
+}
+
+.button-small {
+  height: 2.8rem;
+  font-size: 0.8rem;
+  padding: 0 1.5rem;
+  line-height: 2.8rem;
+}
+
+.button-large {
+  height: 4.5rem;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  line-height: 4.5rem;
+}
+
+.button-fullwidth {
+  width: 100%;
+}
+
+/* 3. Header/Navigation - Customise header and navigation
+/* ---------------------------------------------------------- */
+
+#header {
+  min-height: 65px;
+}
+
+/* 4. Footer - Customise footer
+/* ---------------------------------------------------------- */
+
+/* #footer {
+} */
+
+/* 5. Index - Customise index
+/* ---------------------------------------------------------- */
+
+/* #index {
+} */
+
+/* 6. Tag - Customise tag
+/* ---------------------------------------------------------- */
+
+/* #tag {
+} */
+
+/* 7. Author - Customise author
+/* ---------------------------------------------------------- */
+
+/* #author {
+} */
+
+/* 9. Page - Customise pages
+/* ---------------------------------------------------------- */
+
+/* #page {
+} */
+
+/* 9. Post - Customise posts
+/* ---------------------------------------------------------- */
+
+/* #post {
+} */
+
+/* 10. Post-Card - Customise post-cards
+/* ---------------------------------------------------------- */
+
+/* #post-card {
+} */
+
+/* 11. Error - Customise error
+/* ---------------------------------------------------------- */
+
+/* #error {
+} */
+
+/* 12. Snackbar Styles - Customise snackbars
+/* ---------------------------------------------------------- */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar.error {
+  background-color: var(--error);
+  color: var(--error);
+}
+
+#snackbar.warning {
+  background-color: var(--warning);
+  color: var(--warning);
+}
+
+#snackbar.info {
+  background-color: var(--info);
+  color: var(--info);
+}
+
+#snackbar.success {
+  background-color: var(--success);
+  color: var(--success);
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

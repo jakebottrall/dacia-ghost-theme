@@ -1,0 +1,22 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+<div id="author" class="container">
+    {{#author}}
+    <main>
+        <h2>{{name}}</h2>
+        <p>{{author-location}}</p>
+        {{#if profile_image}}
+        <img src={{profile_image}} alt={{name}}>
+        {{/if}}
+        {{bio}}
+    </main>
+    {{/author}}
+    <div>
+        {{#foreach posts}}
+        {{> "post-card"}}
+        {{/foreach}}
+    </div>
+</div>

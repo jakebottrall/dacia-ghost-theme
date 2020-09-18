@@ -1,0 +1,283 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+<div id="page" class="container">
+    {{#post}}
+    <main>
+        <h2>{{title}}</h2>
+        {{#if feature_image}}
+        <img src={{img_url feature_image}} alt={{title}}>
+        {{/if}}
+        {{!-- {{content}} --}}
+        <section>
+            <h3>Text</h3>
+            <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
+                <em>emphasized</em>.
+                This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+                This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this
+                    is a link</a>.</p>
+
+            <hr />
+
+            <header>
+                <h3>Heading with a Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+            </header>
+            <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
+                faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan
+                varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+            <header>
+                <h4>Heading with a Subtitle</h4>
+                <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+            </header>
+            <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
+                faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan
+                varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+
+            <hr />
+
+            <h1>Heading Level 1</h1>
+            <h2>Heading Level 2</h2>
+            <h3>Heading Level 3</h3>
+            <h4>Heading Level 4</h4>
+            <h5>Heading Level 5</h5>
+            <h6>Heading Level 6</h6>
+
+            <hr />
+
+            <h4>Blockquote</h4>
+            <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus
+                euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+                volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor
+                sit amet nullam adipiscing eu felis.</blockquote>
+
+            <h4>Preformatted</h4>
+            <pre><code>
+i = 0;
+
+while (!deck.isInOrder()) {
+	print 'Iteration ' + i;
+	deck.shuffle();
+	i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';
+
+	</code></pre>
+        </section>
+
+        <!-- Lists -->
+        <section>
+            <h3>Lists</h3>
+            <div class="row">
+                <div class="column">
+
+                    <h4>Unordered</h4>
+                    <ul>
+                        <li>Dolor pulvinar etiam magna etiam.</li>
+                        <li>Sagittis adipiscing lorem eleifend.</li>
+                        <li>Felis enim feugiat dolore viverra.</li>
+                    </ul>
+
+                    <h4>Description</h4>
+                    <dl>
+                        <dt>Description list item 1</dt>
+                        <dd>Description list item 1.1</dd>
+                        <dd>Description list item 1.2</dd>
+                        <dt>Description list item 2</dt>
+                        <dd>Description list item 2.1</dd>
+                        <dt>Description list item 3</dt>
+                        <dd>Description list item 3.1</dd>
+                        <dt>Description list item 4</dt>
+                        <dd>Description list item 4.1</dd>
+                        <dt>Description list item 5</dt>
+                        <dt>Description list item 6</dt>
+                        <dd>Description list item 6.1</dd>
+                    </dl>
+                </div>
+
+                <div class="column">
+
+                    <h4>Ordered</h4>
+                    <ol>
+                        <li>Dolor pulvinar etiam magna etiam.</li>
+                        <li>Etiam vel felis at lorem sed viverra.</li>
+                        <li>Felis enim feugiat dolore viverra.</li>
+                        <li>Dolor pulvinar etiam magna etiam.</li>
+                        <li>Etiam vel felis at lorem sed viverra.</li>
+                        <li>Felis enim feugiat dolore viverra.</li>
+                    </ol>
+
+                    <h4>Icons</h4>
+                    <a href="#">
+                        <i class="fab fa-twitter fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-facebook fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-github fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-envelope fa-2x">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-phone fa-2x">
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table -->
+        <section>
+            <h3>Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item 1</td>
+                        <td>Ante turpis integer aliquet porttitor.</td>
+                        <td>29.99</td>
+                    </tr>
+                    <tr>
+                        <td>Item 2</td>
+                        <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                        <td>19.99</td>
+                    </tr>
+                    <tr>
+                        <td>Item 3</td>
+                        <td> Morbi faucibus arcu accumsan lorem.</td>
+                        <td>29.99</td>
+                    </tr>
+                    <tr>
+                        <td>Item 4</td>
+                        <td>Vitae integer tempus condimentum.</td>
+                        <td>19.99</td>
+                    </tr>
+                    <tr>
+                        <td>Item 5</td>
+                        <td>Ante turpis integer aliquet porttitor.</td>
+                        <td>29.99</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>100.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Buttons -->
+        <section>
+            <h3>Primary Buttons</h3>
+            <a href="#" class="button">Default Button</a>
+            <a href="#" class="button button-outline">Outlined</a>
+            <a href="#" class="button button-clear">Clear</a>
+            <a href="#" class="button button-small">Small Button</a>
+            <a href="#" class="button button-large">Large Button</a>
+        </section>
+        <section>
+            <h3>Secondary Buttons</h3>
+            <a href="#" class="button button-secondary">Secondary Button</a>
+            <a href="#" class="button button-outline button-secondary">Outlined</a>
+            <a href="#" class="button button-clear button-secondary">Clear</a>
+            <a href="#" class="button button-small button-secondary">Small Button</a>
+            <a href="#" class="button button-large button-secondary">Large Button</a>
+        </section>
+
+        <!-- Form -->
+        <section>
+            <h3>Form</h3>
+            <form method="post" action="#">
+                <div class="row">
+                    <div class="column">
+                        <input type="text" name="name" id="name" value="" placeholder="Name" />
+                    </div>
+                    <div class="column">
+                        <input type="email" name="email" id="email" value="" placeholder="Email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <select name="category" id="category">
+                            <option value="">- Category -</option>
+                            <option value="1">Manufacturing</option>
+                            <option value="1">Shipping</option>
+                            <option value="1">Administration</option>
+                            <option value="1">Human Resources</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="radio" id="priority-low" name="priority" checked>
+                        <label class="label-inline" for="priority-low">Low Priority</label>
+                    </div>
+                    <div class="column">
+                        <input type="radio" id="priority-normal" name="priority">
+                        <label class="label-inline" for="priority-normal">Normal Priority</label>
+                    </div>
+                    <div class="column">
+                        <input class="secondary" type="radio" id="priority-high" name="priority">
+                        <label class="label-inline" for="priority-high">High Priority</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="checkbox" id="copy" name="copy">
+                        <label class="label-inline" for="copy">Email me a copy of this message</label>
+                    </div>
+                    <div class="column">
+                        <input type="checkbox" id="human" name="human" checked>
+                        <label class="label-inline" for="human">I am a human and not a robot</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input class="button button-fullwidth" type="submit" value="Send Message" class="primary" />
+                    </div>
+                    <div class="column">
+                        <input class="button button-outline button-fullwidth" type="reset" value="Reset" />
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+    </main>
+    {{#get "pages" filter="slug:-{{slug}}" limit="3"}}
+    {{#foreach pages}}
+    {{> "post-card"}}
+    {{/foreach}}
+    {{/get}}
+    {{/post}}
+</div>

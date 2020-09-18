@@ -1,0 +1,15 @@
+<header id="header" class="container">
+    <a href="/">
+        {{#if @site.logo}}
+        <img height="65px" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+        {{else}}
+        {{@site.title}}
+        {{/if}}
+    </a>
+    <div class="float-right">
+        {{#if @site.navigation}}
+        {{navigation}}
+        {{/if}}
+    </div>
+    </div>
+</header>
