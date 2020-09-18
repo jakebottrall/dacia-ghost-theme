@@ -3,17 +3,27 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<div id="tag" class="container">
+<div id="tag">
     {{#tag}}
-    <main>
-        <h2>{{name}}</h2>
-        {{#if feature_image}}
-        <img src={{img_url feature_image}} alt={{name}}>
-        {{/if}}
-        {{description}}
+
+    <main class="container" style="background-image: url({{img_url feature_image}})" alt="name">
     </main>
+
+    <section class="wrapper style3">
+        <div class="title">{{name}}</div>
+        <div class="content">
+            {{description}}
+        </div>
+    </section>
+
     {{/tag}}
-    {{#foreach posts}}
-    {{> "post-card"}}
-    {{/foreach}}
+
+    <section class="wrapper style2">
+        <div class="title">Posts</div>
+        {{#foreach posts}}
+        {{> "post-card"}}
+        <hr>
+        {{/foreach}}
+    </section>
+
 </div>

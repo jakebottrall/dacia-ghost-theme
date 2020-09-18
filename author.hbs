@@ -3,20 +3,30 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<div id="author" class="container">
+<div id="author">
     {{#author}}
     <main>
-        <h2>{{name}}</h2>
-        <p>{{author-location}}</p>
         {{#if profile_image}}
         <img src={{profile_image}} alt={{name}}>
         {{/if}}
-        {{bio}}
     </main>
+
+    <section class="wrapper style3">
+        <div class="title">{{name}}</div>
+        <p>{{author-location}}</p>
+        <div class="content">
+            {{bio}}
+        </div>
+    </section>
+
     {{/author}}
-    <div>
+
+    <section class="wrapper style2">
+        <div class="title">Posts</div>
         {{#foreach posts}}
         {{> "post-card"}}
+        <hr>
         {{/foreach}}
-    </div>
+    </section>
+
 </div>

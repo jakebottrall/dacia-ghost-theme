@@ -1,2 +1,73 @@
 <footer id="footer">
+    <section class="wrapper style3">
+        <div class="title">Get In Touch</div>
+        <form id="contact-form" class="row">
+            <div class="row">
+                <div class="column">
+                    <input required type="text" name="name" id="name" value="" placeholder="Name" />
+                </div>
+                <div class="column">
+                    <input required type="email" name="email" id="email" value="" placeholder="Email" />
+                </div>
+                <div class="column">
+                    <textarea required id="message" placeholder="Hey!..."></textarea>
+                </div>
+                <input id="logoUrl" style="display: none;" type="text" id="logoUrl" value={{@site.logo}} />
+            </div>
+            <div class="row">
+                <div class="column">
+                    <button class="button button-fullwidth button-outline" type="submit" id="contact"
+                        class="primary">Send</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <span class="recaptcha-disclaimer">
+                        This site is protected by reCAPTCHA and the Google
+                        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                    </span>
+                </div>
+            </div>
+        </form>
+        <hr class="subtext-light">
+        <div class="row">
+            <div class="column">
+                <i class="float-left fas fa-envelope fa-2x"></i>
+
+                <div class="list-item">
+                    <h3>Email</h3>
+                    <a href="mailto:info@daciatech.com?subject=Website Enquiry" target="_blank">info@daciatech.com</a>
+                </div>
+                <hr class="subtext-light">
+            </div>
+            <div class="column">
+                <i class="float-left fab fa-connectdevelop fa-2x"></i>
+                <div class="list-item">
+                    <h3>Connect</h3>
+                    <div class="social">
+                        <a href="https://www.facebook.com/daciatech" target="_blank">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://www.twitter.com/dacia_tech" target="_blank">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dacia-tech/" target="_blank">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr class="subtext-light">
+            </div>
+        </div>
+    </section>
+    <p class="copyright">
+        &copy; {{@site.title}}. All rights reserved
+        <br />
+        Designed and Developed by
+        <a href="https://www.daciatech.com" rel="noopener noreferrer" target="_blank">
+            Dacia Tech
+        </a>
+    </p>
+
 </footer>

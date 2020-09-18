@@ -13,6 +13,7 @@
 10. Post-card Styles
 11. Error Styles
 12. Snackbar Styles
+13. Custom Component Styles
 
 */
 
@@ -45,7 +46,7 @@ body {
   opacity: 0;
   color: var(--dark-contrast-text);
   transition: opacity 0.5s ease-in-out;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--background-default);
 }
 
@@ -53,7 +54,44 @@ body.loaded {
   opacity: 1;
 }
 
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.subtext-dark {
+  color: var(--dark-contrast-subtext);
+}
+
+.subtext-light {
+  color: var(--light-contrast-subtext);
+}
+
+hr.subtext-dark {
+  border-top-color: var(--dark-contrast-subtext);
+}
+
+hr.subtext-light {
+  border-top-color: var(--light-contrast-subtext);
+}
+
+pre {
+  background-color: var(--background-paper);
+}
+
 code {
+  color: var(--primary-light);
   background-color: var(--background-paper);
 }
 
@@ -65,8 +103,143 @@ a {
   visibility: hidden;
 }
 
+main {
+  width: 100%;
+  height: 20em;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+main h1 {
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+main p {
+  font-size: 0.9em;
+  letter-spacing: 0.2em;
+  color: var(--dark-contrast-subtext);
+}
+
+section.wrapper {
+  position: relative;
+  padding: 3em 2em 6em 2em;
+}
+
+section.wrapper .title {
+  left: 50%;
+  width: 18em;
+  top: -2.5em;
+  height: 2.5em;
+  display: block;
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-left: -9em;
+  line-height: 2.5em;
+  padding-top: 0.5em;
+  position: absolute;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-bottom: -2.5em;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+section.wrapper .title:before {
+  content: "";
+  left: -35px;
+  width: 35px;
+  height: 15px;
+  bottom: -15px;
+  position: absolute;
+  background-size: 100% 100%;
+  background: url("../img/shadow.png");
+}
+
+section.wrapper .title:after {
+  content: "";
+  width: 35px;
+  right: -35px;
+  height: 15px;
+  bottom: -15px;
+  position: absolute;
+  transform: scaleX(-1);
+  background-size: 100% 100%;
+  background: url("../img/shadow.png");
+}
+
+section.wrapper.style1 {
+  color: var(--dark-contrast-text);
+  background-color: var(--background-default);
+}
+
+section.wrapper.style1 .title {
+  color: var(--primary);
+  background-color: var(--background-default);
+}
+
+section.wrapper.style1 .title:before {
+  filter: invert();
+}
+
+section.wrapper.style1 .title:after {
+  filter: invert();
+}
+
+section.wrapper.style2 {
+  background-color: var(--primary-dark);
+}
+
+section.wrapper.style2 .title {
+  color: var(--dark-contrast-text);
+  background-color: var(--primary-dark);
+}
+
+section.wrapper.style3 {
+  background-color: #fff;
+  color: var(--light-contrast-text);
+}
+
+section.wrapper.style3 .title {
+  color: var(--primary);
+  background-color: #fff;
+}
+
 /* 2. Milligram Overide Styles
 /* ---------------------------------------------------------- */
+
+/* text input overides and enhancements */
+
+input,
+textarea {
+  color: var(--light-contrast-text);
+}
+
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+input:not([type]):focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: 0;
+}
 
 /* button overides and enhancements */
 
@@ -87,6 +260,14 @@ input[type="reset"].button-outline,
 input[type="submit"].button-outline {
   background-color: transparent;
   color: var(--primary);
+}
+
+.button.button-outline.button-white,
+button.button-outline.button-white,
+input[type="button"].button-outline.button-white,
+input[type="reset"].button-outline.button-white,
+input[type="submit"].button-outline.button-white {
+  color: #fff;
 }
 
 .button.button-clear,
@@ -144,20 +325,190 @@ input[type="submit"].button-clear.button-secondary {
 /* ---------------------------------------------------------- */
 
 #header {
-  min-height: 65px;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+#header.active {
+  transform: translateX(275px);
+}
+
+#hamburger-wrapper {
+  left: 0;
+  width: 54px;
+  margin: 6px;
+  height: 38px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  border-radius: 3.5px;
+  justify-content: center;
+  background-color: rgba(92, 95, 103, 0.5);
+}
+
+#hamburger .line {
+  width: 25px;
+  height: 2.5px;
+  display: block;
+  margin: 4px auto;
+  background-color: var(--primary);
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger:hover {
+  cursor: pointer;
+}
+
+#hamburger.is-active {
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger.is-active .line {
+  background-color: var(--secondary);
+}
+
+#hamburger.is-active .line:nth-child(2) {
+  width: 0px;
+}
+
+#hamburger.is-active .line:nth-child(1),
+#hamburger.is-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+#hamburger.is-active .line:nth-child(1) {
+  transform: translateY(6px);
+}
+
+#hamburger.is-active .line:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+
+#click-away {
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+#click-away.active {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#navigation {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#navigation a {
+  height: 6rem;
+  line-height: 6rem;
+  display: block;
+  color: var(--secondary-contrast-text);
+}
+
+#navigation a:hover {
+  color: var(--primary-dark);
+}
+
+#navigation a.active {
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--primary-dark);
+}
+
+#drawer {
+  top: 0;
+  width: 275px;
+  left: -275px;
+  z-index: 100;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  padding: 12px 20px;
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--background-default);
+}
+
+#drawer.active {
+  transform: translateX(275px);
+}
+
+#drawer #navigation {
+  width: 100%;
+}
+
+#drawer a {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+#drawer a:hover,
+#drawer a.active {
+  border-bottom: solid 1px var(--primary);
 }
 
 /* 4. Footer - Customise footer
 /* ---------------------------------------------------------- */
 
-/* #footer {
-} */
+#footer {
+  background-color: #fff;
+  color: var(--light-contrast-text);
+}
+
+#footer section.wrapper {
+  padding-bottom: 0;
+}
+
+#footer .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 4em;
+}
+
+.recaptcha-disclaimer {
+  font-size: 0.75em;
+  line-height: -0.5em;
+  color: var(--light-contrast-subtext);
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.75em;
+  text-align: center;
+  line-height: -0.5em;
+  padding-bottom: 10px;
+  color: var(--light-contrast-subtext);
+}
 
 /* 5. Index - Customise index
 /* ---------------------------------------------------------- */
 
 /* #index {
 } */
+
+#index .border-emphasis {
+  padding: 1.25em;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25em;
+  border-radius: 0.35em;
+  letter-spacing: 0.05em;
+  color: var(--secondary-light);
+  box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+}
 
 /* 6. Tag - Customise tag
 /* ---------------------------------------------------------- */
@@ -186,8 +537,28 @@ input[type="submit"].button-clear.button-secondary {
 /* 10. Post-Card - Customise post-cards
 /* ---------------------------------------------------------- */
 
-/* #post-card {
+/* .post-card {
 } */
+
+.post-card h3 {
+  font-size: 1.15em;
+  text-align: center;
+  margin: 0 0 0.75em 0;
+  letter-spacing: 0.05em;
+  color: var(--dark-contrast-text);
+}
+
+.post-card p {
+  text-align: center;
+  margin: 0 0 0.75em 0;
+  letter-spacing: 0.05em;
+  color: var(--dark-contrast-subtext);
+}
+
+.post-card a img {
+  border: solid 10px #fff;
+  margin-bottom: 1em;
+}
 
 /* 11. Error - Customise error
 /* ---------------------------------------------------------- */
@@ -279,4 +650,20 @@ input[type="submit"].button-clear.button-secondary {
     bottom: 0;
     opacity: 0;
   }
+}
+
+/* 13. Custom Component Styles
+/* ---------------------------------------------------------- */
+
+.list-item {
+  text-align: left;
+  padding-left: 4em;
+}
+
+.list-item h3 {
+  font-size: 1.15em;
+}
+
+.list-item p {
+  font-size: 0.85em;
 }

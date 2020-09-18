@@ -1,15 +1,26 @@
+<div id="drawer">
+    {{#if @site.navigation}}
+    {{navigation}}
+    {{/if}}
+</div>
 <header id="header" class="container">
-    <a href="/">
+    <div id="hamburger-wrapper">
+        <div id="hamburger" onclick="toggleDrawer()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    {{!-- <a href="/">
         {{#if @site.logo}}
         <img height="65px" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
         {{else}}
         {{@site.title}}
         {{/if}}
     </a>
-    <div class="float-right">
-        {{#if @site.navigation}}
-        {{navigation}}
-        {{/if}}
+    {{#if @site.navigation}}
+    {{navigation}}
+    {{/if}} --}}
     </div>
-    </div>
+    <div id="click-away"></div>
 </header>
