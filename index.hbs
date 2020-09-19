@@ -4,76 +4,84 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <div id="index">
-    <main class="container" style="background-image: url({{@site.cover_image}})">
-        <h1>
-            {{#if @site.logo}}
-            <img height="35px" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-            {{else}}
-            {{@site.title}}
-            {{/if}}
-        </h1>
-        <p>{{@site.description}}</p>
+    <main style="background-image: url({{@site.cover_image}})">
+        <div class="container">
+            <h1 data-aos="fade-down" data-aos-delay="200">
+                {{#if @site.logo}}
+                <img height="35px" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+                {{else}}
+                {{@site.title}}
+                {{/if}}
+            </h1>
+            <p data-aos="fade-down" data-aos-delay="300">{{@site.description}}</p>
+        </div>
     </main>
     <section class="wrapper style1">
         <div class="title">Who are we?</div>
-        <p class="subtext-dark align-center">In case you were wondering who Dacia Tech is...</p>
-        <p class="border-emphasis">Founded in 2018, Dacia Tech is a group of freelancing specialists that work
-            together to create
-            beautiful and
-            intuitive websites and webapps.</p>
-        <p class="align-center">When an off the shelf product just doesn't cut it for your personal or business needs
-            we're here to help.
-            Everything is built to your required specifications and integrated into your workflow.</p>
 
+        <div class="container">
+            <p class="subtext-dark align-center" data-aos="fade-right" data-aos-delay="100">In case you were wondering
+                who Dacia Tech is...</p>
+            <p class="border-emphasis" data-aos="fade-left" data-aos-delay="200">Founded in 2018, Dacia Tech is a group
+                of freelancing specialists that work
+                together to create
+                beautiful and
+                intuitive websites and webapps.</p>
+            <p class="align-center" data-aos="fade-right" data-aos-delay="300">When an off the shelf product just
+                doesn't
+                cut it for your personal or business
+                needs
+                we're here to help.
+                Everything is built to your required specifications and integrated into your workflow.</p>
+        </div>
     </section>
     <section class="wrapper style2">
-        <div class="title">What do we do?</div>
-        <p>Dacia Tech offers a range of services including:</p>
-        <div class="row">
-            <div class="column">
-                <i class="float-left fas fa-palette fa-2x"></i>
+        <div class="title" data-aos="fade-up" data-aos-delay="100">What do we do?</div>
+        <div class="container">
+            <p data-aos="fade-right" data-aos-delay="200" class="align-center">Dacia Tech offers a range of services
+                including:</p>
+            <div class="row">
+                <div class="column half list-item" data-aos="fade-right" data-aos-delay="300">
+                    <i class="float-left fas fa-palette fa-2x"></i>
+                    <div class="list-item-content">
+                        <h3>Design</h3>
+                        <p class="subtext-dark">Every design is created from the ground up. Dacia Tech will work closely
+                            with you to establish the desired aesthetic.</p>
+                        <a class="button button-small" href="/design">More info</a>
+                    </div>
+                </div>
+                <div class="column half list-item" data-aos="fade-right" data-aos-delay="400">
+                    <i class="float-left fas fa-layer-group fa-2x"></i>
+                    <div class="list-item-content">
+                        <h3>Develop</h3>
+                        <p class="subtext-dark">Our development services offer excellent usability, universal
+                            compatibility
+                            and scalability.</p>
+                        <a class="button button-small" href="/develop">More info</a>
+                    </div>
+                </div>
+                <div class="column half list-item" data-aos="fade-right" data-aos-delay="500">
+                    <i class="float-left fas fa-server fa-2x"></i>
+                    <div class="list-item-content">
+                        <h3>Hosting</h3>
+                        <p class="subtext-dark">Dacia Tech will setup your website/webapp to be fast, secure and
+                            affordable.
+                        </p>
+                        <a class="button button-small" href="/hosting">More info</a>
+                    </div>
+                </div>
+                <div class="column half list-item" data-aos="fade-right" data-aos-delay="600">
+                    <i class="float-left fas fa-handshake fa-2x"></i>
+                    <div class="list-item-content">
+                        <h3>Consulting</h3>
+                        <p class="subtext-dark">With years of industry experience, we can design a complete IT setup
+                            that works for you.
+                        </p>
+                        <a class="button button-small" href="/consulting">More info</a>
+                    </div>
+                </div>
+            </div>
 
-                <div class="list-item">
-                    <h3>Design</h3>
-                    <p class="subtext-dark">Every design is created from the ground up. Dacia Tech will work closely
-                        with you to establish the desired aesthetic.</p>
-                    <a class="button button-small" href="/design">More info</a>
-                </div>
-                <hr class="subtext-dark">
-            </div>
-            <div class="column">
-                <i class="float-left fas fa-layer-group fa-2x"></i>
-                <div class="list-item">
-                    <h3>Develop</h3>
-                    <p class="subtext-dark">Our development services offer excellent usability, universal compatibility
-                        and scalability.</p>
-                    <a class="button button-small" href="/develop">More info</a>
-                </div>
-                <hr class="subtext-dark">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <i class="float-left fas fa-palette fa-2x"></i>
-                <div class="list-item">
-                    <h3>Hosting</h3>
-                    <p class="subtext-dark">Dacia Tech will setup your website/webapp to be fast, secure and affordable.
-                    </p>
-                    <a class="button button-small" href="/hosting">More info</a>
-                </div>
-                <hr class="subtext-dark">
-            </div>
-            <div class="column">
-                <i class="float-left fas fa-layer-group fa-2x"></i>
-                <div class="list-item">
-                    <h3>Consulting</h3>
-                    <p class="subtext-dark">With years of industry experience, Dacia Tech can design a complete IT setup
-                        that simply works and lets you get on with the more important things.
-                    </p>
-                    <a class="button button-small" href="/consulting">More info</a>
-                </div>
-                <hr class="subtext-dark">
-            </div>
         </div>
     </section>
 </div>

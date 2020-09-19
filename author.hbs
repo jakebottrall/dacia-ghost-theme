@@ -12,7 +12,7 @@ into the {body} of the default.hbs template --}}
     </main>
 
     <section class="wrapper style3">
-        <div class="title">{{name}}</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="100">{{name}}</div>
         <p>{{author-location}}</p>
         <div class="content">
             {{bio}}
@@ -23,10 +23,16 @@ into the {body} of the default.hbs template --}}
 
     <section class="wrapper style2">
         <div class="title">Posts</div>
-        {{#foreach posts}}
-        {{> "post-card"}}
-        <hr>
-        {{/foreach}}
+        <div class="container">
+            <div class="row">
+                {{#foreach posts}}
+                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                    {{> "post-card"}}
+                </div>
+                {{/foreach}}
+            </div>
+
+        </div>
     </section>
 
 </div>

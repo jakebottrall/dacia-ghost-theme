@@ -4,7 +4,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <div id="error">
-    <main>
+    <main style="background-image: url({{@site.cover_image}})">
         <h2>{{statusCode}} - {{message}}</h2>
         <div>
             <a href="/" class="button">Click here to return home</a>

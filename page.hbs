@@ -6,24 +6,30 @@ into the {body} of the default.hbs template --}}
 <div id="page">
     {{#post}}
 
-    <main class="container" style="background-image: url({{img_url feature_image}})">
+    <main style="background-image: url({{img_url feature_image}})">
     </main>
 
     <section class="wrapper style3">
-        <div class="title">{{title}}</div>
-        <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-delay="100">{{title}}</div>
+        <div class="container content">
             {{content}}
         </div>
     </section>
 
     <section class="wrapper style2">
-        <div class="title">See More</div>
-        {{#get "pages" filter="slug:-{{slug}}" limit="3"}}
-        {{#foreach pages}}
-        {{> "post-card"}}
-        <hr>
-        {{/foreach}}
-        {{/get}}
+        <div class="title" data-aos="fade-up" data-aos-delay="100">See More</div>
+        <div class="container">
+
+            {{#get "pages" filter="slug:-{{slug}}" limit="3"}}
+            <div class="row">
+                {{#foreach pages}}
+                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                    {{> "post-card"}}
+                </div>
+                {{/foreach}}
+            </div>
+            {{/get}}
+        </div>
     </section>
 
     {{/post}}

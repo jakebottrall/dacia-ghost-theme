@@ -6,12 +6,12 @@ into the {body} of the default.hbs template --}}
 <div id="post">
     {{#post}}
 
-    <main class="container" style="background-image: url({{img_url feature_image}})">
+    <main style="background-image: url({{img_url feature_image}})">
     </main>
 
     <section class="wrapper style3">
-        <div class="title">{{title}}</div>
-        <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-delay="100">{{title}}</div>
+        <div class="container content">
             {{content}}
         </div>
     </section>
@@ -21,15 +21,19 @@ into the {body} of the default.hbs template --}}
     {{#if related_posts}}
 
     <section class="wrapper style2">
-
         {{#../primary_tag}}
-        <div class="title">More in {{name}}</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="100">More in {{name}}</div>
         {{/../primary_tag}}
+        <div class="container">
+            <div class="row">
+                {{#foreach related_posts}}
+                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                    {{> "post-card"}}
+                </div>
+                {{/foreach}}
+            </div>
 
-        {{#foreach related_posts}}
-        {{> "post-card"}}
-        <hr>
-        {{/foreach}}
+        </div>
     </section>
 
     {{/if}}

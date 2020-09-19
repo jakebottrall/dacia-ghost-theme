@@ -11,16 +11,11 @@
             <span class="line"></span>
         </div>
     </div>
-    {{!-- <a href="/">
-        {{#if @site.logo}}
-        <img height="65px" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-        {{else}}
-        {{@site.title}}
-        {{/if}}
-    </a>
-    {{#if @site.navigation}}
-    {{navigation}}
-    {{/if}} --}}
     </div>
     <div id="click-away"></div>
 </header>
+<div id="nav-bar" data-aos="fade-down" data-aos-delay="100">
+    {{#if @site.navigation}}
+    {{navigation}}
+    {{/if}}
+</div>

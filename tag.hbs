@@ -6,12 +6,12 @@ into the {body} of the default.hbs template --}}
 <div id="tag">
     {{#tag}}
 
-    <main class="container" style="background-image: url({{img_url feature_image}})" alt="name">
+    <main style="background-image: url({{img_url feature_image}})" alt="name">
     </main>
 
     <section class="wrapper style3">
-        <div class="title">{{name}}</div>
-        <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-delay="100">{{name}}</div>
+        <div class="container content">
             {{description}}
         </div>
     </section>
@@ -19,11 +19,18 @@ into the {body} of the default.hbs template --}}
     {{/tag}}
 
     <section class="wrapper style2">
-        <div class="title">Posts</div>
-        {{#foreach posts}}
-        {{> "post-card"}}
-        <hr>
-        {{/foreach}}
+
+        <div class="title" data-aos="fade-up" data-aos-delay="100">Posts</div>
+        <div class="container">
+            <div class="row">
+                {{#foreach posts}}
+                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                    {{> "post-card"}}
+                </div>
+                {{/foreach}}
+            </div>
+
+        </div>
     </section>
 
 </div>
