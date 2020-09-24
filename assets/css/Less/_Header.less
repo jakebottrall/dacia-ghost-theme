@@ -1,0 +1,156 @@
+// Header
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+#header {
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  &.active {
+    transform: translateX(275px);
+  }
+}
+
+#nav-bar {
+  display: none;
+}
+
+#hamburger-wrapper {
+  left: 0;
+  width: 54px;
+  margin: 6px;
+  height: 38px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  border-radius: 3.5px;
+  justify-content: center;
+  background-color: rgba(92, 95, 103, 0.5);
+}
+
+#hamburger {
+  .line {
+    width: 25px;
+    height: 2.5px;
+    display: block;
+    margin: 4px auto;
+    background-color: @colour-primary;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.is-active {
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out;
+    .line {
+      background-color: @colour-secondary;
+    }
+    .line:nth-child(2) {
+      width: 0px;
+    }
+    .line:nth-child(1),
+    .line:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+    .line:nth-child(1) {
+      transform: translateY(6px);
+    }
+    .line:nth-child(3) {
+      transform: translateY(-6px) rotate(90deg);
+    }
+  }
+}
+
+#click-away {
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+#navigation {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  a {
+    height: 6rem;
+    line-height: 6rem;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    color: @colour-dark-contrast-text;
+    &:hover {
+      color: @colour-primary;
+    }
+    &.active {
+      font-weight: 500;
+      font-size: 2rem;
+      color: @colour-primary-dark;
+    }
+  }
+}
+
+#drawer {
+  top: 0;
+  width: 275px;
+  left: -275px;
+  z-index: 100;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  padding: 12px 20px;
+  transition: transform 0.3s ease-in-out;
+  background-color: @colour-background-default;
+  &.active {
+    transform: translateX(275px);
+  }
+  #navigation {
+    width: 100%;
+  }
+  a {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+    &:hover {
+      border-bottom: solid 1px @colour-primary-light;
+    }
+    &.active {
+      border-bottom: solid 1px @colour-primary;
+    }
+  }
+}
+
+@media @Tablet {
+  #nav-bar {
+    background-color: transparent;
+    top: 2.5em;
+    width: 100%;
+    height: 0;
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    #navigation {
+      flex-direction: row;
+      border-radius: 0.35em;
+      height: 6rem;
+      padding: 0 1.5em 0 1.5em;
+      color: @colour-dark-contrast-text;
+      background-color: rgba(0, 0, 0, 0.85);
+      box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+      a {
+        padding: 0 1.5em;
+      }
+    }
+  }
+}

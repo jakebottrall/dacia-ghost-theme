@@ -1,0 +1,64 @@
+// Snackbars
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+#snackbar {
+  left: 50%;
+  bottom: 30px;
+  padding: 16px;
+  z-index: 9999;
+  position: fixed;
+  min-width: 250px;
+  visibility: hidden;
+  text-align: center;
+  border-radius: 2px;
+  margin-left: -125px;
+
+  &.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  &.error {
+    background-color: @colour-error;
+    color: @colour-dark-contrast-text;
+  }
+
+  &.warning {
+    background-color: @colour-warning;
+    color: @colour-dark-contrast-text;
+  }
+
+  &.info {
+    background-color: @colour-info;
+    color: @colour-dark-contrast-text;
+  }
+
+  &.success {
+    background-color: @colour-success;
+    color: @colour-dark-contrast-text;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

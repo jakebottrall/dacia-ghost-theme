@@ -1,0 +1,54 @@
+// Utility
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Clear a float with .clearfix
+.clearfix {
+  &:after {
+    clear: both;
+    content: " "; // The space content is one way to avoid an Opera bug.
+    display: table;
+  }
+}
+
+// Float either direction
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+// text aligns
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+// text colours
+.dark {
+  color: @colour-dark-contrast-text !important;
+}
+
+.light {
+  color: @colour-light-contrast-text !important;
+}
+
+.subtext-dark {
+  color: @colour-dark-contrast-subtext !important;
+}
+
+.subtext-light {
+  color: @colour-light-contrast-subtext !important;
+}

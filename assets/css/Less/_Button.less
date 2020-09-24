@@ -1,0 +1,184 @@
+// Primary Button
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  height: 3.8rem;
+  cursor: pointer;
+  padding: 0 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 3.8rem;
+  white-space: nowrap;
+  border-radius: 0.4rem;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background-color: @colour-primary;
+  color: @colour-dark-contrast-text;
+  border: 0.1rem solid @colour-primary;
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    color: @colour-dark-contrast-text;
+    border-color: @colour-primary-light;
+    background-color: @colour-primary-light;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+
+    &:focus,
+    &:hover {
+      border-color: @colour-primary;
+      background-color: @colour-primary;
+    }
+  }
+
+  &.button-outline {
+    color: @colour-primary;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      color: @colour-primary-light;
+      background-color: transparent;
+      border-color: @colour-primary-light;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        border-color: inherit;
+        color: @colour-primary;
+      }
+    }
+  }
+
+  &.button-clear {
+    color: @colour-primary;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      border-color: transparent;
+      color: @colour-primary-light;
+      background-color: transparent;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        color: @colour-primary;
+      }
+    }
+  }
+}
+
+.button-secondary,
+input[type="button"].button-secondary,
+input[type="reset"].button-secondary,
+input[type="submit"].button-secondary {
+  height: 3.8rem;
+  cursor: pointer;
+  padding: 0 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 3.8rem;
+  white-space: nowrap;
+  border-radius: 0.4rem;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: @colour-dark-contrast-text;
+  background-color: @colour-secondary;
+  border: 0.1rem solid @colour-secondary;
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    color: @colour-dark-contrast-text;
+    border-color: @colour-secondary-light;
+    background-color: @colour-secondary-light;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+
+    &:focus,
+    &:hover {
+      border-color: @colour-secondary;
+      background-color: @colour-secondary;
+    }
+  }
+
+  &.button-outline {
+    color: @colour-secondary;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+      color: @colour-secondary-light;
+      border-color: @colour-secondary-light;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        border-color: inherit;
+        color: @colour-secondary;
+      }
+    }
+  }
+
+  &.button-clear {
+    color: @colour-secondary;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      border-color: transparent;
+      background-color: transparent;
+      color: @colour-secondary-light;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        color: @colour-secondary;
+      }
+    }
+  }
+}
+
+// Button sizing
+.button-small {
+  height: 2.8rem;
+  font-size: 0.8rem;
+  padding: 0 1.5rem;
+  line-height: 2.8rem;
+}
+
+.button-large {
+  height: 4.5rem;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  line-height: 4.5rem;
+}
+
+.button-fullwidth {
+  width: 100%;
+}

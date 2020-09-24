@@ -22,9 +22,9 @@ into the {body} of the default.hbs template --}}
 
         <div class="title" data-aos="fade-up" data-aos-delay="100">Posts</div>
         <div class="container">
-            <div class="row">
+            <div class="row wrap">
                 {{#foreach posts}}
-                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                <div class="column md-33" data-aos="fade-right" data-aos-delay="{{@index}}00">
                     {{> "post-card"}}
                 </div>
                 {{/foreach}}

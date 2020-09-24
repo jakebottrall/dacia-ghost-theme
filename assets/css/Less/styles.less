@@ -1,0 +1,207 @@
+// Table of contents
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// 1.  Imports
+// 2.  Globals
+// 3.  Custom Components
+
+// 1. Imports - Import the things
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@Tablet: ~"(min-width: 40em)";
+@Desktop: ~"(min-width: 80em)";
+
+@import "_Normalize";
+@import "_Colour";
+@import "_Base";
+@import "_Blockquote";
+@import "_Button";
+@import "_Code";
+@import "_Divider";
+@import "_Form";
+@import "_Grid";
+@import "_Link";
+@import "_List";
+@import "_Spacing";
+@import "_Table";
+@import "_Typography";
+@import "_Image";
+@import "_Utility";
+@import "_Snackbar";
+@import "_Koenig.less";
+@import "_Header.less";
+@import "_Footer.less";
+@import "_Post-Card.less";
+
+// 2. Globals - Set up some things globally
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+body {
+  opacity: 0;
+  overflow-x: hidden;
+  color: @colour-dark-contrast-text;
+  transition: opacity 0.5s ease-in-out;
+  background-color: @colour-background-default;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+main {
+  width: 100%;
+  height: 20em;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  background-position-x: center;
+  background-position-y: center;
+
+  h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.2em;
+  }
+
+  p {
+    font-size: 0.9em;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: @colour-dark-contrast-subtext;
+  }
+}
+
+@media @Tablet {
+  main {
+    height: 35em;
+  }
+}
+
+// 3. Custom Components - Custom Components that don
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.wrapper {
+  position: relative;
+  padding: 3em 2em 6em 2em;
+
+  .title {
+    left: 50%;
+    width: 18em;
+    top: -2.5em;
+    height: 2.6em;
+    display: block;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-left: -9em;
+    line-height: 2.5em;
+    position: absolute;
+    text-align: center;
+    padding-top: 0.5em;
+    margin-bottom: -2.5em;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    &:before {
+      content: "";
+      left: -35px;
+      width: 35px;
+      height: 15px;
+      bottom: -15px;
+      position: absolute;
+      background-size: 100% 100%;
+      background: url("../img/shadow.png");
+    }
+
+    &:after {
+      content: "";
+      width: 35px;
+      right: -35px;
+      height: 15px;
+      bottom: -15px;
+      position: absolute;
+      transform: scaleX(-1);
+      background-size: 100% 100%;
+      background: url("../img/shadow.png");
+    }
+  }
+
+  &.style1 {
+    color: @colour-dark-contrast-text;
+    background-color: @colour-background-default;
+
+    .title {
+      color: @colour-primary;
+      background-color: @colour-background-default;
+
+      &:before {
+        filter: invert();
+      }
+
+      &:after {
+        filter: invert();
+      }
+    }
+  }
+
+  &.style2 {
+    background-color: @colour-primary-dark;
+
+    .title {
+      color: @colour-dark-contrast-text;
+      background-color: @colour-primary-dark;
+    }
+  }
+
+  &.style3 {
+    background-color: #fff;
+    color: @colour-light-contrast-text;
+
+    .title {
+      color: @colour-primary;
+      background-color: #fff;
+    }
+  }
+}
+
+.border-emphasis {
+  padding: 1.25em;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25em;
+  border-radius: 0.35em;
+  letter-spacing: 0.05em;
+  color: @colour-secondary-light;
+  box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.list-item {
+  padding-bottom: 2em !important;
+}
+
+.list-item-content {
+  height: 100%;
+  text-align: left;
+  padding-left: 4em;
+  padding-bottom: 2em;
+  border-bottom: solid 1px @colour-dark-contrast-subtext;
+}
+
+.style3 .list-item-content {
+  border-bottom: solid 1px @colour-light-contrast-subtext;
+}
+
+.list-item-content h3 {
+  font-size: 1.15em;
+}
+
+.list-item-content p {
+  font-size: 0.85em;
+}

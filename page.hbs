@@ -21,9 +21,9 @@ into the {body} of the default.hbs template --}}
         <div class="container">
 
             {{#get "pages" filter="slug:-{{slug}}" limit="3"}}
-            <div class="row">
+            <div class="row wrap">
                 {{#foreach pages}}
-                <div class="column third" data-aos="fade-right" data-aos-delay="{{@index}}00">
+                <div class="column md-33" data-aos="fade-right" data-aos-delay="{{@index}}00">
                     {{> "post-card"}}
                 </div>
                 {{/foreach}}

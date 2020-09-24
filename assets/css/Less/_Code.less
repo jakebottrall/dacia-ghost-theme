@@ -1,0 +1,25 @@
+// Code
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+code {
+  font-size: 86%;
+  margin: 0 0.2rem;
+  white-space: nowrap;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
+  color: @colour-primary-light;
+  background: @colour-background-paper;
+}
+
+pre {
+  overflow-y: hidden;
+  background: @colour-background-paper;
+  border-left: 0.3rem solid @colour-primary;
+
+  & > code {
+    display: block;
+    border-radius: 0;
+    white-space: pre;
+    padding: 1rem 1.5rem;
+  }
+}
